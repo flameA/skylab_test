@@ -1,0 +1,17 @@
+<h1>BUI DUC AN - Skylab</h1>
+<h2> question 1:  </h2>
+<p>Implement bubble sort (highest to lowest and lowest to highest) in Ruby for array
+</p>
+<%= @array_input %>
+<h4> Change you input  </h4>
+<h1> <%= @errors if @errors %></h1>
+<%= form_tag(question1_answer_path, :method => :get) do %>
+  <%= label_tag(:array_input, "Enter your array seperate by \, :") %>
+  <%= text_field_tag(:array_input) %>
+  <%= submit_tag('Ok') %>
+<% end %>
+
+<h4> Array ascending : <%= @array_ascending %>
+	</h4>
+<h4> Array descending: <%= @arrray_descending %>
+</h4>
