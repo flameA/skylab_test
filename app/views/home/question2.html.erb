@@ -1,0 +1,26 @@
+<h1>BUI DUC AN - Skylab</h1>
+<h2> question 2:  </h2>
+<p>
+	Given 2 integer arrays, find the common elements between 2 arrays
+</p>
+<p>
+	Array 1: <%= @array1 %>
+</p>
+<p>
+	Array 2: <%= @array2 %>
+</p>
+
+<h4> Change you input  </h4>
+<h1> <%= @errors if @errors %></h1>
+<%= form_tag(question2_answer_path, :method => :get) do %>
+  <%= label_tag(:array1, "Enter array 1 seperate by \, :") %>
+  <%= text_field_tag(:array1) %>
+  <br>
+  <%= label_tag(:array2, "Enter array 2 seperate by \, :") %>
+  <%= text_field_tag(:array2) %>
+  <br>
+  <%= submit_tag('Ok') %>
+<% end %>
+<h4>
+	Result: <%=	@result_array %>
+</h4>
