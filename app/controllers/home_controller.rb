@@ -23,7 +23,17 @@ class HomeController < ApplicationController
     end
   end
 
-  def question3; end
+  def question3
+    services = Questions::Question3.new(question3_params[:source])
+    result = services.execute
+    @source = services.source
+    if result.present?
+      @character = result.first[0]
+      @index = result.first[1]
+    else
+      @errors = 'Fail execute question3'
+    end
+  end
 
   def question4; end
 
@@ -43,6 +53,12 @@ class HomeController < ApplicationController
     @question2_params ||= params.tap do |p|
       p[:array1] = p[:array1].split(',').map(&:to_i) if p[:array1]
       p[:array2] = p[:array2].split(',').map(&:to_i) if p[:array2]
+    end
+  end
+
+  def question3_params
+    @question3_params ||= params.tap do |p|
+      p[:source] = p[:source].strip if p[:source]
     end
   end
 end

@@ -1,0 +1,19 @@
+<h1>BUI DUC AN - Skylab</h1>
+<h2> question 3:  </h2>
+<p>
+	 Find the first non-repeated character in a String:
+	 <%= @source %>
+</p>
+
+<h4> Change you input  </h4>
+<h1> <%= @errors if @errors %></h1>
+<%= form_tag(question3_answer_path, :method => :get) do %>
+  <%= label_tag(:source, "Enter your string:") %>
+  <%= text_field_tag(:source) %>
+  <br>
+  <%= submit_tag('Ok') %>
+<% end %>
+<h4>
+	First non-repeated character is : <%=	@character %>
+	with index <%= @index %>
+</h4>

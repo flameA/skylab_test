@@ -10,16 +10,26 @@ module Questions
     end
 
     def execute
-      hash_array1 = {}
-      @result_array = []
-      array1.each { |item| hash_array1[item] = true }
-      array2.each { |item| @result_array << item if hash_array1[item] }
+      hash_for_input1 = convert_array_to_hash(array1)
+      @result_array = get_common_element_from_array2(hash_for_input1)
       true
     rescue StandardError => e
       message = "Question2 execute got error: #{e}"
       Rails.logger.error message
       puts message
       false
+    end
+
+    private
+
+    def convert_array_to_hash(array)
+      array.map { |item| [item, true] }.to_h
+    end
+
+    def get_common_element_from_array2(hash_for_input)
+      result_array = []
+      array2.each { |item| result_array << item if hash_for_input[item] }
+      result_array
     end
   end
 end
