@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def question1
     services = Questions::Question1.new(question1_params[:array_input])
     if services.execute
-      @array_input = services.array
+      @array_input = services.source
       @array_ascending = services.asc_array
       @arrray_descending = services.desc_array
     else

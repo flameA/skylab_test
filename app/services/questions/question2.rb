@@ -14,10 +14,12 @@ module Questions
       @result_array = []
       array1.each { |item| hash_array1[item] = true }
       array2.each { |item| @result_array << item if hash_array1[item] }
-      @result_array
+      true
     rescue StandardError => e
       message = "Question2 execute got error: #{e}"
       Rails.logger.error message
+      puts message
+      false
     end
   end
 end
