@@ -7,7 +7,7 @@ describe Questions::Question3 do
   let(:services) { described_class.new(source_string) }
 
   describe '#execute' do
-    it 'return first no-repeat character and index' do
+    it 'return hash with count the number of the character in a String ' do
       result = services.execute
       expect(result.first[0]).to eq 'e'
       expect(result.first[1]).to eq 16

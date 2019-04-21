@@ -24,7 +24,7 @@ class HomeController < ApplicationController
   end
 
   def question3
-    services = Questions::Question3.new(question3_params[:source])
+    services = Questions::Question3.new(question_params[:source])
     result = services.execute
     @source = services.source
     if result.present?
@@ -35,7 +35,16 @@ class HomeController < ApplicationController
     end
   end
 
-  def question4; end
+  def question4
+    services = Questions::Question4.new(question_params[:source])
+    if services.execute
+      @source = services.source
+      @output1 = services.output1
+      @output2 = services.output2
+    else
+      @errors = 'Fail execute question4'
+    end
+  end
 
   def question5; end
 
@@ -56,8 +65,8 @@ class HomeController < ApplicationController
     end
   end
 
-  def question3_params
-    @question3_params ||= params.tap do |p|
+  def question_params
+    @question_params ||= params.tap do |p|
       p[:source] = p[:source].strip if p[:source]
     end
   end

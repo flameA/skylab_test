@@ -1,0 +1,24 @@
+<h1>BUI DUC AN - Skylab</h1>
+<h2> question 4:  </h2>
+<p>
+	 Count the number of the character in a String after that Sort the character by the number from highest to lowest and lowest to highestEx:
+
+</p>
+	<p> Input: <%= @source %></p>
+<h4> Change you input  </h4>
+<h1>
+	<%= @errors if @errors %>
+</h1>
+<%= form_tag(question4_answer_path, :method => :get) do %>
+  <%= label_tag(:source, "Enter your string:") %>
+  <%= text_field_tag(:source) %>
+  <br>
+  <%= submit_tag('Ok') %>
+<% end %>
+<h4>
+	Output 1: <%= @output1 %>
+</h4>
+
+<h4>
+	Output 2: <%= @output2 %>
+</h4>
