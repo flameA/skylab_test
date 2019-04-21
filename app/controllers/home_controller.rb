@@ -48,8 +48,6 @@ class HomeController < ApplicationController
 
   def question5; end
 
-  def question6; end
-
   private
 
   def question1_params

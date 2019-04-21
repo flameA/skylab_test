@@ -1,0 +1,7 @@
+<h1>BUI DUC AN - Skylab</h1>
+<h2> question 5:  </h2>
+<p> List of event logs </p>
+<% @event_logs.each do |event| %>
+	<%= "Id: #{event.id}, event_name: #{event.event_name}, timestamp: #{event.timestamp}" %>
+</br>
+<% end %>
