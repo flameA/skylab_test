@@ -1,0 +1,20 @@
+<h1>BUI DUC AN - Skylab</h1>
+<h2> question 5:  </h2>
+<p>
+	Create logger class support multiple outputCreate logger class support multiple output such as a console, file ( in log/ folder ), mail.
+</p>
+
+<h2>I create class MultiLogger::Base for multiple outputCreate</h2>
+<h2>I create class MultiLogger::FileOutputter for input to file</h2>
+<h2> How to use: </h2>
+<h3>
+	std_out = Logger.new(STDOUT)
+</br>
+	MasterLogger = MultiLogger::Base.new(loggers: std_out, level: 'INFO')
+</br>
+	file_output = MultiLogger::FileOutputter.new('log_file.log') #log_file.log is file name in file log, default path is 'tmp/file_log'
+	<br>
+	MasterLogger.add_logger file_output #add new output type, can handle multiple type here
+</h3>
+
+<h2>Default logger init in this app is MasterLogger with support INFO level</h2>

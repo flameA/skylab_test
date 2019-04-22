@@ -46,7 +46,9 @@ class HomeController < ApplicationController
     end
   end
 
-  def question5; end
+  def question5
+    MasterLogger.info 'Received request for question5'
+  end
 
   private
 
